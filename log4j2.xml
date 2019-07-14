@@ -28,7 +28,7 @@
             <AppenderRef ref="RollingFile"/>
         </Root>
 
-        <!-- LOG "com.baeldung*" at TRACE level -->
+        <!-- LOG "poe.crafter.controllers" at DEBUG level -->
         <Logger name="poe.crafter.controllers" level="debug"/>
     </Loggers>
 

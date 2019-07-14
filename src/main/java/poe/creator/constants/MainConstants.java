@@ -1,13 +1,12 @@
 package poe.creator.constants;
 
-public enum ItemBase {
+public enum  MainConstants {
 
-    HELMET("helmet"),
-    GLOVES("gloves");
+    ITEM_SESSION_CODE("Item");
 
     private final String code;
 
-    ItemBase(String code) {
+    MainConstants(String code) {
         this.code = code;
     }
 

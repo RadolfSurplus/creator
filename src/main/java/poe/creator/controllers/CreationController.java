@@ -2,32 +2,42 @@ package poe.creator.controllers;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import poe.creator.data.models.Response;
+import poe.creator.data.models.Item;
+import poe.creator.utils.SessionUtils;
 
-@RestController("/create")
+@RestController()
+@RequestMapping("/create")
 public class CreationController {
 
     private static final Logger LOG = LogManager.getLogger(CreationController.class);
 
+    @GetMapping("/current")
+    public Item getCurrent() {
+        return SessionUtils.getCurrentItem();
+    }
+
     @PostMapping("/base")
-    public Response selectBase() {
-        return new Response();
+    public Item selectBase() {
+        Item currentItem = SessionUtils.getCurrentItem();
+        return new Item();
     }
 
     @PostMapping("/type")
-    public Response selectType() {
-        return new Response();
+    public Item selectType() {
+        return new Item();
     }
 
     @PostMapping("/suffix")
-    public Response selectSuffix() {
-        return new Response();
+    public Item selectSuffix() {
+        return new Item();
     }
 
     @PostMapping("/prefix")
-    public Response selectPrefix() {
-        return new Response();
+    public Item selectPrefix() {
+        return new Item();
     }
 }
