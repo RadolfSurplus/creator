@@ -1,45 +1,67 @@
 package poe.creator.data.models;
 
-import poe.creator.constants.ItemBase;
+import poe.creator.data.models.modifiers.Implicit;
+import poe.creator.data.models.modifiers.explicits.Prefix;
+import poe.creator.data.models.modifiers.explicits.Suffix;
 
 import java.util.Collection;
 
 public class Item {
 
-    private ItemBase base;
-    private Collection<String> prefix;
-    private Collection<String> suffix;
+    private Base base;
+    private Type type;
+    private Implicit implicit;
+    private Collection<Prefix> prefixCollection;
+    private Collection<Suffix> suffixCollection;
 
     public Item() {
     }
 
-    public Item(ItemBase base, Collection<String> prefix, Collection<String> suffix) {
+    public Item(Base base, Type type, Implicit implicit, Collection<Prefix> prefixCollection, Collection<Suffix> suffixCollection) {
         this.base = base;
-        this.prefix = prefix;
-        this.suffix = suffix;
+        this.type = type;
+        this.implicit = implicit;
+        this.prefixCollection = prefixCollection;
+        this.suffixCollection = suffixCollection;
     }
 
-    public ItemBase getBase() {
+    public Base getBase() {
         return base;
     }
 
-    public void setBase(ItemBase base) {
+    public void setBase(Base base) {
         this.base = base;
     }
 
-    public Collection<String> getPrefix() {
-        return prefix;
+    public Type getType() {
+        return type;
     }
 
-    public void setPrefix(Collection<String> prefix) {
-        this.prefix = prefix;
+    public void setType(Type type) {
+        this.type = type;
     }
 
-    public Collection<String> getSuffix() {
-        return suffix;
+    public Implicit getImplicit() {
+        return implicit;
     }
 
-    public void setSuffix(Collection<String> suffix) {
-        this.suffix = suffix;
+    public void setImplicit(Implicit implicit) {
+        this.implicit = implicit;
+    }
+
+    public Collection<Prefix> getPrefixCollection() {
+        return prefixCollection;
+    }
+
+    public void setPrefixCollection(Collection<Prefix> prefixCollection) {
+        this.prefixCollection = prefixCollection;
+    }
+
+    public Collection<Suffix> getSuffixCollection() {
+        return suffixCollection;
+    }
+
+    public void setSuffixCollection(Collection<Suffix> suffixCollection) {
+        this.suffixCollection = suffixCollection;
     }
 }

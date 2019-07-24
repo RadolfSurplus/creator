@@ -1,1 +1,6 @@
-
+datafile:
+  names:
+    type: itemTypes.xml
+    implicit: itemImplicit.xml
+    prefix: itemPrefixes.xml
+    suffix: itemSuffixes.xml

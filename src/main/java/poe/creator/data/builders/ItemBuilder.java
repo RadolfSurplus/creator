@@ -13,8 +13,8 @@ public abstract class ItemBuilder {
 
     public abstract Item setBase();
     public abstract Item setType();
-    public abstract Item setPrefix();
-    public abstract Item setSuffix();
+    public abstract Item addPrefix();
+    public abstract Item addSuffix();
 
     public Item build() {
         return item;

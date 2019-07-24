@@ -15,12 +15,12 @@ public class MainItemBuilder extends ItemBuilder {
     }
 
     @Override
-    public Item setPrefix() {
+    public Item addPrefix() {
         return null;
     }
 
     @Override
-    public Item setSuffix() {
+    public Item addSuffix() {
         return null;
     }
 }

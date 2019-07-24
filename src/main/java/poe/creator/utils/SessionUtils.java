@@ -18,6 +18,7 @@ public class SessionUtils {
     }
 
     public static Item getCurrentItem() {
+        //TODO Refactor item creation in if-else block
         HttpSession currentSession = getCurrentSession();
         Item currentItem = (Item) currentSession.getAttribute(MainConstants.ITEM_SESSION_CODE.getCode());
         if (currentItem == null) {
@@ -25,6 +26,10 @@ public class SessionUtils {
             currentSession.setAttribute(MainConstants.ITEM_SESSION_CODE.getCode(), currentItem);
         }
         return currentItem;
+    }
+
+    public static void storeItem(Item item) {
+        storeAttribute(MainConstants.ITEM_SESSION_CODE.getCode(), item);
     }
 
     private static HttpSession getCurrentSession() {
