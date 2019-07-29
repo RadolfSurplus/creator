@@ -3,6 +3,7 @@ package poe.creator.data.models.modifiers;
 import poe.creator.data.models.Base;
 
 import java.util.Collection;
+import java.util.List;
 
 public abstract class Explicit extends Modifier {
 
@@ -10,8 +11,8 @@ public abstract class Explicit extends Modifier {
     private String name;
     private Collection<Base> relevantBaseCollection;
 
-    public Explicit(String description, Integer itemLevel, String name, Collection<Base> relevantBaseCollection) {
-        super(description);
+    public Explicit(String template, List<ModifierData> modifierData, Integer itemLevel, String name, Collection<Base> relevantBaseCollection) {
+        super(template, modifierData);
         this.itemLevel = itemLevel;
         this.name = name;
         this.relevantBaseCollection = relevantBaseCollection;
